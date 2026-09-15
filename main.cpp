@@ -14,6 +14,13 @@ double mphToKmh(double v) {
 	return v * COEFF;
 }
 
+
+// Перевод из км/ч в мили/ч
+double kmhToMph(double v) {
+	return v / COEFF;
+}
+
+
 // ==== Главная функция: меню ====
 
 int main() {
@@ -23,6 +30,7 @@ int main() {
 	do {
 		cout << "\n==== Вариант 76: Конвертер скорости мили/ч <-> км/ч ====\n";
 		cout << "1. мили/ч -> км/ч\n";
+		cout << "2. км/ч -> мили/ч\n";
 		cout << "0. Завершить работу\n";
 		cout << "Выберите пункт: ";
 		cin >> choice;
@@ -33,6 +41,11 @@ int main() {
 			cout << "Введите скорость: ";
 			cin >> v;
 			cout << v << " мили/ч = " << mphToKmh(v) << " км/ч" << endl;
+			break;
+		case 2:
+			cout << "Введите скорость: ";
+			cin >> v;
+			cout << v << " км/ч = " << kmhToMph(v) << " мили/ч" << endl;
 			break;
 		case 0:
 			cout << "Работа завершена.\n";
