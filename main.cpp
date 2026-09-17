@@ -1,5 +1,4 @@
 ﻿
-// Компьютер номер 2
 // Лабораторная работа № 1. Вариант 76.
 // Выполнила: Барсукова А.А., группа ПИ-51.
 
@@ -25,15 +24,21 @@ double kmhToMph(double v) {
 void output(double (*convert)(double), string oldMeasure, string newMeasure)
 {
 	double v;
-	cout << "Введите скорость: ";
-	cin >> v;
+
+	do {
+		cout << "Введите скорость: ";
+		cin >> v;
+		if (v < 0)
+			cout << "\nОшибка! Скорость должна быть неотрицательной. \n";
+	} while (v < 0);
+
 	cout << v << oldMeasure << " -> " << convert(v) << newMeasure << endl;
 }
 
 // ==== Главная функция: меню ====
 
 int main() {
-	int choice;
+	int choice = 0;
 
 	do {
 		cout << "\n==== Вариант 76: Конвертер скорости мили/ч <-> км/ч ====\n";
